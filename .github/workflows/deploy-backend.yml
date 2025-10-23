@@ -74,7 +74,7 @@ jobs:
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v3
         with:
-          app-name: 'app-002-gen10-step3-1-node-oshima58-backend'
+          app-name: 'app-002-gen10-step3-1-node-oshima58'
           slot-name: 'Production'
           package: ./deploy.zip
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_BACKEND }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_110A8B7038114DDA93FBF9F6FF08A8A0 }}
