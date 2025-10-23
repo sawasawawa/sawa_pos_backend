@@ -1,0 +1,22 @@
+# This workflow is disabled
+# Backend functionality has been integrated into the frontend Next.js application
+name: Disabled - Backend Integrated into Frontend
+
+on:
+  workflow_dispatch:
+    inputs:
+      reason:
+        description: 'This workflow is disabled'
+        required: false
+        default: 'Backend integrated into frontend'
+
+jobs:
+  disabled:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Workflow Disabled
+        run: |
+          echo "This workflow is disabled."
+          echo "Backend functionality has been integrated into the frontend Next.js application."
+          echo "Please use the frontend repository for deployment."
+          exit 1
