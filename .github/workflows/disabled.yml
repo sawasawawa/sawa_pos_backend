@@ -29,17 +29,11 @@ jobs:
       - name: Create deployment package
         run: |
           mkdir -p deploy
-          # Copy necessary files and directories explicitly
-          cp app.py deploy/
-          cp -r db_control deploy/
-          cp -r backend deploy/ || true
-          cp requirements.txt deploy/
-          cp startup.sh deploy/ || true
-          cp test_connection.py deploy/ || true
-          cp .env deploy/ || true
-          cp *.pem deploy/ || true
+          cp -r . deploy/
+          rm -rf deploy/.git
+          rm -rf deploy/__pycache__
+          rm -rf deploy/.github
           echo "📦 Deployment package created"
-          ls -la deploy
 
       - name: Zip deployment package
         run: |
