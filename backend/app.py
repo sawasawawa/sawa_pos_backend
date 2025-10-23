@@ -16,7 +16,7 @@ ROOT_DIR = Path(__file__).resolve().parents[1]
 if str(ROOT_DIR) not in sys.path:
     sys.path.append(str(ROOT_DIR))
 
-from db_control.connect import engine
+from db_control.connect_azure import engine
 from db_control.mymodels import Items, Purchases, PurchaseDetails, Customers
 
 app = FastAPI()
@@ -25,7 +25,11 @@ app = FastAPI()
 # CORSの設定 フロントエンドからの接続を許可する部分
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],
+    allow_origins=[
+        "http://localhost:3000",
+        "https://app-002-gen10-step3-1-node-oshima58.azurewebsites.net",
+        "https://*.azurewebsites.net"
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"]
