@@ -66,6 +66,11 @@ jobs:
           name: python-app
           path: .
 
+      - name: Azure Login
+        uses: azure/login@v2
+        with:
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_110A8B7038114DDA93FBF9F6FF08A8A0 }}
+
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v3
         with:
